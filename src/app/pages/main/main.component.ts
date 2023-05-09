@@ -39,6 +39,13 @@ export class MainComponent implements OnInit {
   }
 
   onTaskCompleted(task: TTask) {
-    this.toastr.success(`Tarefa ${task.id} concluída com sucesso. `);
+    this.toastr.success(`Task ${task.id} concluída com sucesso. `);
+  }
+
+  removeTask(task: TTask) {
+    let indexToRemove = this.tasks.findIndex((item) => item.id === task.id);
+    this.tasks.splice(indexToRemove, 1);
+
+    this.toastr.success(`Task ${task.id} removida com sucesso. `);
   }
 }
