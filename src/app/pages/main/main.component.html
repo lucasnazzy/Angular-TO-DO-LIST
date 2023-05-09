@@ -1,0 +1,37 @@
+<div class="box-list">
+  <div class="container pt-5">
+    <div class="d-flex align-items-center justify-content-center">
+      <span class="box-title">TO-DO LIST</span>
+    </div>
+
+    <div class="box-fields mt-3">
+      <input
+        type="text"
+        class="form-control add-field me-3"
+        [(ngModel)]="task"
+        placeholder="Digite a sua tarefa"
+        (keypress)="onKeyPress($event)"
+      />
+
+      <div class="buttons-box">
+        <button class="button-add me-3" (click)="addTask()">Adicionar</button>
+        <button class="button-clear" (click)="clearAllTasks()">
+          Limpar Tasks
+        </button>
+      </div>
+    </div>
+
+    <div class="no-tasks-box mt-3" *ngIf="tasks.length <= 0">
+      <span> Sem tasks criadas no momento</span>
+    </div>
+
+    <div class="mt-3" *ngIf="tasks.length > 0">
+      <div class="d-flex flex-column" *ngFor="let task of tasks">
+        <div class="d-flex align-items-center">
+          <span class="tasks-numbers me-1"> {{ task.id }}º</span>
+          <span class="tasks-titles"> {{ task.title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

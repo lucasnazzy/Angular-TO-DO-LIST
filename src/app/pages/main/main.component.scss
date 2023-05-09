@@ -1,0 +1,106 @@
+.box-list {
+  height: 100vh;
+  background-color: #ebebeb;
+
+  .box-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #474747;
+  }
+
+  .add-field {
+    height: 40px;
+    padding: 0px 15px;
+
+    &:focus {
+      box-shadow: none;
+      border-color: #ced4da;
+    }
+
+    &:focus::-moz-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+
+    &:focus:-ms-input-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+  }
+
+  .tasks-titles {
+    color: #474747;
+    font-weight: 500;
+    font-size: 26px;
+  }
+  .tasks-numbers {
+    color: #8257e5;
+    font-weight: 500;
+    font-size: 26px;
+  }
+
+  .button-add {
+    border: none;
+    background-color: #8257e5;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    color: white;
+    font-size: 14px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  .button-clear {
+    border: none;
+    background-color: #212529;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  .buttons-box {
+    display: flex;
+    align-items: center;
+    @media (max-width: 600px) {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  .no-tasks-box {
+    border-radius: 3px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 18px;
+    justify-content: center;
+    background: #dcd2f3;
+    color: #8257e5;
+    padding: 20px;
+    height: 20vh;
+  }
+
+  .box-fields {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+}
