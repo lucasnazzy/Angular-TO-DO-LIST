@@ -14,7 +14,13 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addTask() {
+  public addTask(): void {
+    if (this.isNullOrEmpty(this.task)) {
+      this.toastr.error('Por favor, preencha o campo', 'Erro.');
+      this.task = null;
+      return;
+    }
+
     const newTask: any = {
       id: this.tasks.length + 1,
       title: this.task,
@@ -26,26 +32,30 @@ export class MainComponent implements OnInit {
     this.task = null;
   }
 
-  onKeyPress(event: KeyboardEvent) {
+  public onKeyPress(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
       this.addTask();
     }
   }
 
-  clearAllTasks() {
+  public clearAllTasks(): void {
     this.tasks = [];
     this.task = null;
     this.toastr.success('Tasks removidas com sucesso.', 'Tasks removidas.');
   }
 
-  onTaskCompleted(task: TTask) {
+  public onTaskCompleted(task: TTask): void {
     this.toastr.success(`Task ${task.id} concluída com sucesso. `);
   }
 
-  removeTask(task: TTask) {
+  public removeTask(task: TTask): void {
     let indexToRemove = this.tasks.findIndex((item) => item.id === task.id);
     this.tasks.splice(indexToRemove, 1);
 
     this.toastr.success(`Task ${task.id} removida com sucesso. `);
+  }
+
+  public isNullOrEmpty(item: string | null): boolean {
+    return item === null || item === undefined || item === '';
   }
 }
