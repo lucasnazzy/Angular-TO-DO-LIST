@@ -29,7 +29,15 @@
       <div class="d-flex flex-column" *ngFor="let task of tasks">
         <div class="d-flex align-items-center">
           <span class="tasks-numbers me-1"> {{ task.id }}º</span>
-          <span class="tasks-titles"> {{ task.title }}</span>
+          <span class="tasks-titles me-2"> {{ task.title }}</span>
+          <label class="custom-checkbox mt-1">
+            <input
+              type="checkbox"
+              [(ngModel)]="task.completed"
+              (change)="onTaskCompleted(task)"
+            />
+            <span class="checkbox-symbol"></span>
+          </label>
         </div>
       </div>
     </div>

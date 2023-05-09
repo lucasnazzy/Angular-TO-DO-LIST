@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { TTask } from 'src/app/models/tasks';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MainComponent implements OnInit {
   public task: string | null = null;
-  public tasks: any[] = [];
+  public tasks: TTask[] = [];
   constructor(private toastr: ToastrService) {}
 
   ngOnInit(): void {}
@@ -35,5 +36,9 @@ export class MainComponent implements OnInit {
     this.tasks = [];
     this.task = null;
     this.toastr.success('Tasks removidas com sucesso.', 'Tasks removidas.');
+  }
+
+  onTaskCompleted(task: TTask) {
+    this.toastr.success(`Tarefa ${task.id} concluída com sucesso. `);
   }
 }
