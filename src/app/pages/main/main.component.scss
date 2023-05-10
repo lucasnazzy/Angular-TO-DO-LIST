@@ -103,6 +103,11 @@
       align-items: start;
     }
   }
+
+  .title-toggle {
+    font-size: 14px;
+    color: rgb(20, 20, 20);
+  }
 }
 .custom-checkbox {
   display: flex;
@@ -241,6 +246,11 @@
       opacity: 1;
       color: #495057;
     }
+  }
+
+  .title-toggle {
+    font-size: 14px;
+    color: white;
   }
 }
 
