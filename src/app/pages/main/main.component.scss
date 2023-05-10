@@ -139,3 +139,152 @@
   cursor: pointer;
   margin-top: 3px;
 }
+
+// darkmode
+
+.box-list-dark {
+  height: 100vh;
+  background-color: #212529;
+
+  .tasks-titles-dark {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .box-title-dark {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .button-add {
+    border: none;
+    background-color: #8257e5;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    color: white;
+    font-size: 14px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  .button-clear {
+    border: none;
+    background-color: #bbbbbb;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    color: #212529;
+    font-size: 14px;
+    white-space: nowrap;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  .buttons-box {
+    display: flex;
+    align-items: center;
+    @media (max-width: 600px) {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  .box-fields {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  .no-tasks-box {
+    border-radius: 3px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 18px;
+    justify-content: center;
+    background: #a3a3a3e6;
+    color: #000000;
+    padding: 20px;
+    height: 20vh;
+  }
+
+  .add-field {
+    height: 40px;
+    padding: 0px 15px;
+
+    &:focus {
+      box-shadow: none;
+      border-color: #ced4da;
+    }
+
+    &:focus::-moz-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+
+    &:focus:-ms-input-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 1;
+      color: #495057;
+    }
+  }
+}
+
+// toggle
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  transition: all 0.3s;
+  background-color: #ffffffe8;
+  border: 1px solid #8257e5;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 1px;
+  bottom: 1px;
+  border-radius: 50%;
+  background-color: #8257e5;
+  transition: all 0.3s;
+}
+
+.toggle input[type="checkbox"]:checked + .slider {
+  background-color: #ffffffe8;
+}
+
+.toggle input[type="checkbox"]:checked + .slider:before {
+  transform: translateX(26px);
+}

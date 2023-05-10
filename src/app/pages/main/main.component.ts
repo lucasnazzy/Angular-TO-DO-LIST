@@ -10,6 +10,7 @@ import { TTask } from 'src/app/models/tasks';
 export class MainComponent implements OnInit {
   public task: string | null = null;
   public tasks: TTask[] = [];
+  public isDarkMode: boolean = false;
   constructor(private toastr: ToastrService) {}
 
   ngOnInit(): void {}
