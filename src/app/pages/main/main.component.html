@@ -47,11 +47,14 @@
             <span class="checkbox-symbol"></span>
           </label>
           <span
-            [ngClass]="[isDarkMode ? 'tasks-titles-dark' : 'tasks-titles']"
+            [ngClass]="[
+              isDarkMode ? 'tasks-titles-dark' : 'tasks-titles',
+              task.completed ? 'completed-task-title' : ''
+            ]"
             class="me-1 ms-2"
           >
-            {{ task.title }}</span
-          >
+            {{ task.title }}
+          </span>
 
           <img
             class="icon"
