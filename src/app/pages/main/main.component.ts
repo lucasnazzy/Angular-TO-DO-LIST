@@ -59,4 +59,9 @@ export class MainComponent implements OnInit {
   public isNullOrEmpty(item: string | null): boolean {
     return item === null || item === undefined || item === '';
   }
+
+  public countCompletedTasks(): number {
+    const filterCompleted = this.tasks.filter((m) => m.completed);
+    return filterCompleted?.length;
+  }
 }
