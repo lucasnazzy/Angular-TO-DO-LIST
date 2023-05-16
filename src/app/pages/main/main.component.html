@@ -1,10 +1,6 @@
 <div [ngClass]="[isDarkMode ? 'box-list-dark' : 'box-list']">
   <div class="container pt-5">
-    <div class="d-flex align-items-center justify-content-center">
-      <span [ngClass]="[isDarkMode ? 'box-title-dark' : 'box-title']"
-        >TO-DO LIST
-      </span>
-
+    <div class="d-flex align-items-center justify-content-center flex-column">
       <div class="d-flex flex-column ms-2">
         <label class="title-toggle"> Darkmode</label>
         <label class="toggle">
@@ -12,6 +8,10 @@
           <span class="slider"></span>
         </label>
       </div>
+      <span [ngClass]="[isDarkMode ? 'box-title-dark' : 'box-title']">
+        TO-DO
+        <span class="title-color"> LIST </span>
+      </span>
     </div>
 
     <div class="box-fields mt-3">

@@ -44,40 +44,41 @@
     font-size: 26px;
   }
 
-  .button-add {
-    border: none;
-    background-color: #8257e5;
-    height: 40px;
-    border-radius: 5px;
-    padding: 0px 15px;
-    color: white;
-    font-size: 14px;
-
-    @media (max-width: 600px) {
-      width: 100%;
-    }
-  }
-  .button-clear {
-    border: none;
-    background-color: #212529;
-    height: 40px;
-    border-radius: 5px;
-    padding: 0px 15px;
-    color: white;
-    font-size: 14px;
-    white-space: nowrap;
-
-    @media (max-width: 600px) {
-      width: 100%;
-    }
-  }
-
   .buttons-box {
     display: flex;
     align-items: center;
     @media (max-width: 600px) {
       margin-top: 1rem;
       width: 100%;
+    }
+
+    .button-add {
+      border: none;
+      background-color: #8257e5;
+      height: 40px;
+      border-radius: 5px;
+      padding: 0px 15px;
+      color: white;
+      font-size: 14px;
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    .button-clear {
+      border: none;
+      background-color: #212529;
+      height: 40px;
+      border-radius: 5px;
+      padding: 0px 15px;
+      color: white;
+      font-size: 14px;
+      white-space: nowrap;
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
 
@@ -297,4 +298,7 @@
 
 .toggle input[type="checkbox"]:checked + .slider:before {
   transform: translateX(26px);
+}
+.title-color {
+  color: #8257e5;
 }
