@@ -32,15 +32,29 @@
     </div>
 
     <div class="d-flex align-items-center mt-3">
-      <span class="fw-bold"> Tasks criadas: </span>
+      <span
+        class="fw-bold"
+        [ngClass]="[isDarkMode ? 'tasks-completed-dark' : '']"
+      >
+        Tasks criadas:
+      </span>
 
-      <span class="ps-2"> {{ tasks.length }}</span>
+      <span [ngClass]="[isDarkMode ? 'tasks-completed-dark' : '']" class="ps-2">
+        {{ tasks.length }}</span
+      >
     </div>
 
     <div class="d-flex align-items-center">
-      <span class="fw-bold"> Tasks completadas: </span>
+      <span
+        class="fw-bold"
+        [ngClass]="[isDarkMode ? 'tasks-completed-dark' : '']"
+      >
+        Tasks completadas:
+      </span>
 
-      <span class="ps-2"> {{ countCompletedTasks() }}</span>
+      <span [ngClass]="[isDarkMode ? 'tasks-completed-dark' : '']" class="ps-2">
+        {{ countCompletedTasks() }}</span
+      >
     </div>
 
     <div class="no-tasks-box mt-3" *ngIf="tasks.length <= 0">
